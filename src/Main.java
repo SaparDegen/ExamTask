@@ -1,69 +1,62 @@
 public class Main {
     public static void main(String[] args) {
 
-        Professor[] profs = {
-                new Professor("John"),
-                new Professor("Michael")
-        };
-
         Group[] groups = {
-                new Group("M1-10", 9, new Professor[]{profs[0]}),
-                new Group("M1-20", 10, new Professor[]{profs[1]}),
-                new Group("M1-30", 11, new Professor[]{profs[0]}),
-                new Group("M1-40", 12, new Professor[]{profs[1]}),
-                new Group("M1-50", 13, new Professor[]{profs[0]}),
-                new Group("M1-60", 14, new Professor[]{profs[1]}),
-                new Group("M1-70", 15, new Professor[]{profs[0]}),
-                new Group("M1-80", 16, new Professor[]{profs[1]}),
-                new Group("M1-90", 17, new Professor[]{profs[0]})
+                new Group("M1-10", 9),
+                new Group("M1-20", 10),
+                new Group("M1-30", 11),
+                new Group("M1-40", 12),
+                new Group("M1-50", 9),
+                new Group("M1-60", 10),
+                new Group("M1-70", 11),
+                new Group("M1-80", 12),
+                new Group("M1-90", 13)
         };
 
-        String[] arrRes = new String[profs.length];
-        for (int k = 0; k < profs.length; k++) {
-            String res1 = "";
-            for (int i = 0; i < groups.length; i++) {
-                for (int j = 0; j < groups[i].getProfessors().length; j++) {
-                    if (profs[k].equals(groups[i].getProfessors()[j])) {
-                        res1 += groups[i].getClassTime() + ",";
+        Student[] students = {
+                new Student("Student1", groups[0], groups[1]),
+                new Student("Student2", groups[1], groups[2]),
+                new Student("Student3", groups[2], groups[3]),
+                new Student("Student4", groups[3], groups[4]),
+                new Student("Student5", groups[4], groups[5]),
+                new Student("Student6", groups[5], groups[6]),
+                new Student("Student7", groups[6], groups[7]),
+                new Student("Student8", groups[8], groups[0]),
+                new Student("Student9", groups[1], groups[2]),
+                new Student("Student10", groups[3], groups[4])
+        };
+
+        Professor[] profs = {
+                new Professor("John", groups[0], groups[1], groups[3], groups[2]),
+                new Professor("Michael", groups[4], groups[5], groups[7], groups[8]),
+                new Professor("Barbara", groups[6], groups[7], groups[8]),
+        };
+
+        Department[] departs = {
+                new Department("Java", groups[1], groups[2], groups[3]),
+                new Department("JavaScript", groups[3], groups[4], groups[5]),
+                new Department("Python", groups[6], groups[7], groups[8])
+        };
+
+        departs[0].setProfessors(new Professor[]{profs[0], profs[1]});
+        departs[1].setProfessors(new Professor[]{profs[2], profs[0]});
+        departs[2].setProfessors(new Professor[]{profs[1], profs[2]});
+
+        int bb;
+        for (int i = 0; i < groups.length; i++) {
+            bb = 0;
+            one:
+            for (int j = 0; j < profs.length; j++) {
+                for (int k = 0; k < profs[j].getGroups().length; k++) {
+                    if (groups[i].getClassName().equals(profs[j].getGroups()[k].getClassName())) {
+                        bb = 1;
+                        break one;
                     }
                 }
             }
-            arrRes[k] = res1;
-        }
-
-        for (int i = 0; i < arrRes.length; i++) {
-            String[] arrR = arrRes[i].split(",");
-            for (int j = 0; j < arrR.length; j++) {
-
+            if (bb == 0) {
+                System.out.println(groups[i].getClassName() + " Each class must be taught by at least one professor.");
             }
         }
-
-        Department dep1 = new Department("Java", new Group[]{groups[0], groups[1], groups[2]});
-        Department dep2 = new Department("JavaScript", new Group[]{groups[3], groups[4], groups[5]});
-        Department dep3 = new Department("Python", new Group[]{groups[6], groups[7], groups[8]});
-
-
-
-
-
-
-/*        for (int i = 0; i < classrooms.length; i++) {
-            for (int j = 0; j < profs.length; j++) {
-
-            }
-            if ()
-        }
-
-
-        Student student1 = new Student("Student1");
-        Student student2 = new Student("Student2");
-        Student student3 = new Student("Student3");
-        Student student4 = new Student("Student4");
-        Student student5 = new Student("Student5");
-        Student student6 = new Student("Student6");
-        Student student7 = new Student("Student7");
-        Student student8 = new Student("Student8");
-        Student student9 = new Student("Student9");
-        Student student10 = new Student("Student10");*/
     }
 }
