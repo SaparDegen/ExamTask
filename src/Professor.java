@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Professor {
     private String profName;
     private Group[] groups;
