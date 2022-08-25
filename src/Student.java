@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Student {
     private String studentName;
     private Group[] groups;
