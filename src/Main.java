@@ -57,7 +57,7 @@ public class Main {
                 }
             }
             if (bb == 0) {
-                System.out.println(groups[i].getClassName() + " Each class must be taught by at least one professor.");
+                System.out.println(groups[i].getClassName() + " Each group must be taught by at least one professor.");
             }
         }
         System.out.println(Arrays.toString(profs));
