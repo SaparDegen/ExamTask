@@ -18,7 +18,7 @@ public class Professor {
             for (int i = 0; i < groups.length; i++) {
                 for (int j = i + 1; j < groups.length; j++) {
                     if (groups[i].getClassTime() == groups[j].getClassTime()) {
-                        System.out.println(groups[i].getClassName() + " = " +groups[j].getClassName() + ": no professor may teach more than one class at the same time.");
+                        System.out.println(this.profName + ", " + groups[i].getClassName() + " = " +groups[j].getClassName() + ": no professor may teach more than one class at the same time.");
                         break;
                     }
                 }
