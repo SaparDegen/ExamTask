@@ -1,18 +1,20 @@
+import java.time.LocalTime;
+
 public class Group {
     private String groupName;
-    private int classTime;
+    private LocalTime classTime;
 
 
-    public Group(String name, int classTime) {
+    public Group(String name, LocalTime classTime) {
         this.groupName = name;
         this.classTime = classTime;
     }
 
-    public int getClassTime() {
+    public LocalTime getClassTime() {
         return classTime;
     }
 
-    public void setClassTime(int classTime) {
+    public void setClassTime(LocalTime classTime) {
         this.classTime = classTime;
     }
 
