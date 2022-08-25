@@ -60,6 +60,7 @@ public class Main {
                 System.out.println(groups[i].getClassName() + " Each group must be taught by at least one professor.");
             }
         }
+        
         System.out.println(Arrays.toString(profs));
         System.out.println(Arrays.toString(students));
     }
