@@ -34,4 +34,12 @@ public class Student {
     public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
+    
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentName='" + studentName + '\'' +
+                ", groups=" + Arrays.toString(groups) +
+                "}\n";
+    }
 }
