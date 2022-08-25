@@ -1,18 +1,19 @@
+import java.time.LocalTime;
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
 
         Group[] groups = {
-                new Group("M1-10", 9),
-                new Group("M1-20", 10),
-                new Group("M1-30", 11),
-                new Group("M1-40", 12),
-                new Group("M1-50", 9),
-                new Group("M1-60", 10),
-                new Group("M1-70", 11),
-                new Group("M1-80", 12),
-                new Group("M1-90", 13)
+                new Group("M1-10", LocalTime.of(9,0)),
+                new Group("M1-20", LocalTime.of(10,0)),
+                new Group("M1-30", LocalTime.of(11,0)),
+                new Group("M1-40", LocalTime.of(12,0)),
+                new Group("M1-50", LocalTime.of(9,0)),
+                new Group("M1-60", LocalTime.of(10,0)),
+                new Group("M1-70", LocalTime.of(11,0)),
+                new Group("M1-80", LocalTime.of(12,0)),
+                new Group("M1-90", LocalTime.of(13,0))
         };
 
         Student[] students = {
