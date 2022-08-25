@@ -34,4 +34,9 @@ public class Professor {
     public void setProfName(String profName) {
         this.profName = profName;
     }
+    
+    @Override
+    public String toString() {
+        return "Professor{profName='" + profName + "', groups=" + Arrays.toString(groups) + "}\n";
+    }
 }
