@@ -23,4 +23,9 @@ public class Group {
     public void setClassName(String className) {
         this.groupName = className;
     }
+    
+    @Override
+    public String toString() {
+        return "{groupName='" + groupName + "', classTime=" + classTime + "}";
+    }
 }
